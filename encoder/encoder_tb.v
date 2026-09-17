@@ -8,10 +8,11 @@ module tb;
   initial begin
     $monitor("Time = %0t, en = %b; i = %b; y = %b", $time, en, i, y);
     for( int k = 0; k<32; k++)
-    {en, i} = k;
-    #1;
-  end
-  $finish;
+      begin
+        {en, i} = k;
+        #1;
+      end
+    $finish;
   end
   initial begin 
     $dumpfile("dump.vcd");
